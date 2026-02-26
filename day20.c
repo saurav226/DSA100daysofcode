@@ -25,7 +25,7 @@ int countZeroSumSubarrays(int arr[], int n)
 {
     long long prefixSum = 0;
     int count = 0;
-
+    
     int offset = MAX;
     int size = 2 * MAX + 1;
 
