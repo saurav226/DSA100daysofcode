@@ -1,0 +1,55 @@
+// Problem: Build a graph with n vertices and m edges using adjacency matrix representation.
+// The graph may be directed or undirected.
+
+// Input:
+// - n (vertices)
+// - m (edges)
+// - m pairs (u, v)
+
+// Output:
+// - n x n adjacency matrix
+#include <stdio.h>
+
+int main() {
+    int n, m;
+
+    printf("Enter number of vertices: ");
+    scanf("%d", &n);
+
+    printf("Enter number of edges: ");
+    scanf("%d", &m);
+
+    int graph[n][n];
+
+    // Initialize matrix with 0
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            graph[i][j] = 0;
+        }
+    }
+
+    int u, v;
+
+    printf("Enter edges (u v):\n");
+    for (int i = 0; i < m; i++) {
+        scanf("%d %d", &u, &v);
+
+        // For undirected graph
+        graph[u][v] = 1;
+        graph[v][u] = 1;
+
+        // 👉 For directed graph, comment above line and use:
+        // graph[u][v] = 1;
+    }
+
+    // Print adjacency matrix
+    printf("\nAdjacency Matrix:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d ", graph[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
