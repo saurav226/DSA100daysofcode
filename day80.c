@@ -34,7 +34,6 @@ int main() {
 
     int dist[n][n];
 
-    // Input and preprocessing
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             scanf("%d", &dist[i][j]);
@@ -44,7 +43,6 @@ int main() {
         }
     }
 
-    // Floyd-Warshall
     for (int k = 0; k < n; k++) {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -58,7 +56,6 @@ int main() {
         }
     }
 
-    // Output
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
 
